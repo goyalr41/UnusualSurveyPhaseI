@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-US">
+<html>
+<head>
+ 	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unusual Commits Survey</title>
+    <meta name="author" content="Raman Goyal">
+     <link rel="icon" href="css/icon.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/stylerepo.css">
+	<link rel="stylesheet" type="text/css" media="all" href="icons/octicons/octicons.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/store.min.js"></script>
+	<script type="text/javascript" src="js/gitcall.js"></script>
+
+	
+	<!-- Google web font-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+  <div class="jumbotron" style="background-color:#330065; display:block">
+    <h1  class="text-center">Unusual Commits Survey</h1> 
+    <!--<p class="text-center"> Please select a repository that you are familiar with, has multiple contributors and at least 50 commits.</p> -->
+  </div>
+
+	
+	<div class = "container startsurvey"> 
+	<br>
+	<p style="font-size:16px"><strong>Unusual Commits:</strong></p>
+	<p style="font-size:16px"> 
+	In the following, we will ask you questions about commits on Github from
+a public repository with which you are familiar. This study is part of a
+larger research project at Carnegie Mellon University, with which we will
+explore how we can provide tool support to highlight commits that are
+important to individual developers.
+<br>
+<br>
+Participation is <strong>voluntary, anonymous, and can be withdrawn at any time</strong>.
+Participation will take approximately 10-15 minutes. We do not publish
+raw data and do not ask for information that can identify you.
+<br>
+<br>
+If you have questions or concerns about this project, contact the
+researchers Prof. Christian Kaestner (<a href="mailto:kaestner@cs.cmu.edu">kaestner@cs.cmu.edu</a>) and Raman
+Goyal (<a href="mailto:ramang@andrew.cmu.edu">ramang@andrew.cmu.edu</a>).  
+<br>
+<br>
+By clicking <strong>“Start Survey”</strong> you are indicating that you are <strong>at least 18
+years old</strong>, have read and understood this form and <strong>agree to participate</strong>
+in this research study.
+	
+	
+	
+	
+	</p>
+	<div class="text-center">
+	<button class = "btn btn-danger startsurveybtn"><i class="fa fa-thumbs-up"></i>&nbsp;Start Survey&nbsp;&nbsp;</button>
+	</div>
+	</div>
+	
+	<div class="container actualsurvey" style="display:none">
+		<br>
+		<p class="pid pull-right"> </p>
+		<p> <strong> Instructions: </strong></p>
+		<p> &bull;&nbsp;To start the survey, you need to <strong>select a repository</strong>. </p>
+		<p>&bull;&nbsp;Repository should be a project that you are <strong>familiar with</strong>, but in which you are not the main contributor. </p>
+		<p> &bull;&nbsp;Ideally it should have <strong>multiple contributors and at least 50 commits</strong>. </p>
+		<p> &bull;&nbsp;To select a repository that you are watching, please enter <strong>your Github username</strong>. 
+		<p> &bull;&nbsp;To select another repository, please enter <strong>Github username</strong> of the repository <strong>owner</strong>. 
+
+		<br>
+		<br>	
+  		  <div class="input-group">
+                <input class="form-control" type="text" name="ghusername"  id="ghusername" placeholder="Please Enter Github Username..." />
+                <span class="input-group-btn"><button type="button" class="btn btn-danger btn-block custbtn" id="ghsubmitbtn">  <i class="fa fa-list-ul" style="color:white;"> </i>  &nbsp; List Repositories  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </button></span>
+          </div>
+          
+          <div id="ghapidata" class="clearfix"></div>
+
+	</div>
+	
+	<div class="modal fade modal-survey" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close presurveyclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color:white">&times;</span></button>
+        <h2 class="modal-title" style="margin-bottom:0px;" id="myModalLabel">Pre Survey</h2>
+		<hr style="margin-top:1px; margin-bottom:1px; background-color:black; border-color:black; border-width:3px">
+        <p class="text-center statusofmodel" style=" margin-top:10px; margin-bottom:1px; margin-right:10px;">Sending Request to Server</p>
+
+        <div class="progress">
+  <div class="progress-bar progress-bar-danger progress-bar-striped active modelprogress" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:0%">
+    0% Complete
+  </div>
+</div>
+      </div>
+      <div class="modal-body">
+  
+<div class="container surveycontainer">
+	        <p class="text-center presurvinfo" style="margin-top:0px;">While we are building the model, please answer the questions below.</p>
+    <p class="question que1" style="width:78%;"><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;How many years of experience do you have as a software developer?</p>
+	<div class = "row">
+<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1" type="radio"  value="less 1 year">< 1 year
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1" type="radio"  value="1-3 years">1-3 years
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1" type="radio"  value="3-5 years">3-5 years
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que1" type="radio"  value="more 5 years">> 5 years
+				    	</label>
+					</div>
+					
+					</div>
+					  <br> 
+					  
+					  <p class="question que2" style="width:78%;"><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;How long have you been using Github or other social coding platforms?</p>
+	<div class = "row">
+<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2" type="radio"  value="less 1 year">< 1 year
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2" type="radio"  value="1-3 years">1-3 years
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2" type="radio"  value="3-5 years">3-5 years
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que2" type="radio"  value="more 5 years">> 5 years
+				    	</label>
+					</div>
+					
+					
+					</div>
+					  <br> 
+					  
+  <p class="question que3" style="width:78%;"><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;What is your relationship to this repository?</p>
+<div class = "row">
+<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3" type="radio"  value="Maintainer">Maintainer
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3" type="radio"  value="Contributor">Contributor
+						</label>
+					</div>	
+					<div class ="col-md-1">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3" type="radio"  value="User">User
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que3" type="radio"  value="Interested Third Party">Interested Third Party
+				    	</label>
+					</div>
+					<div class ="col-md-1">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3" type="radio"  value="Other">Other
+						</label>
+					</div>
+					</div>
+					  <br> 
+					   <p class="question que4" style="width:78%;"><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;How familiar are you with the code &amp; how it evolves in this repository?</p>
+<div class = "row">
+<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4" type="radio"  value="Not familiar at all">Not familiar at all
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4" type="radio"  value="Familiar">Somewhat Familiar
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4" type="radio"  value="Very Familiar">Very Familiar
+							</label>
+					</div>
+					
+					</div>   <br> 
+					
+   <p class="question que5" style="width:78%;"><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;Are you monitoring commits in this repository?</p>
+<div class = "row">
+<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5" id="whymonitor" type="radio"  value="Yes">Yes
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5" id="whymonitor1" type="radio"  value="Occasionally">Occasionally
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5" id="whynotmonitor" type="radio"  value="No">No
+							</label>
+					</div>
+					
+					</div>   <br> 
+	<div class = "whymonitor" style="display:none;">
+	<p class="question que6" style="width:78%; "><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;Why are you monitoring it?</p>
+   <textarea rows="3" class="form-control" id="que6comment" style="width:73%; border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+   <br>
+   </div>
+   <p class="question que7" style="width:78%; "><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;Some commits stand out among all commits in a repository. What characteristics make commits stand out?</p>
+   <textarea rows="3" class="form-control" id="que7comment" style="width:73%; border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+   <br> 
+   <!--<p class="question que8" style="width:78%;"><i class="fa fa-question-circle" style="color:black;"></i> &nbsp;Think back to a commit that you remember as unusual. What was unusual about that commit?</p>
+   <textarea rows="3" class="form-control" id="que8comment" style="width:73%; border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+   <br> -->
+   <p class="text-center presurvinfo pleasewait" style="margin-top:0px; width:75%;">Please wait until the selected repository has been prepared. This happens only once per project and should take less than a minute for small projects and less than 5 minutes for medium to large projects.<br> If computation takes too long, feel free to select another project or come back later.</p>
+
+</div>
+      </div>
+      <div class="modal-footer">
+      	<span class="pull-left">
+      		<span class = "reposizeinfo"> </span>
+      		<span> <a href="#" class="tooltip-toolong" data-toggle="tooltip" data-placement="top" title="Close and select another repo. Your pre-survey data is saved.">Taking too long?</a> </span>
+      	</span>
+      	<span class="span6"></span>
+        <button type="button" class="btn btn-danger presurveyclose reposizeinfobtn" data-dismiss="modal"><i class="fa fa-times" style="color:white;"></i></button>
+        <button type="button" class="btn btn-danger gotoanothermodal"  data-toggle="modal"><i class="fa fa-spinner fa-pulse" style="color:white;"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	<div class="modal fade modal-info-commits" id="myModal1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false"> 
+	<div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color:white">
+          <div class="modal-header"  style="background-color:black;"> 
+              <h1  class="text-center" style="color:rgba(255,255,255,1); font-size:36px; margin-top:1px; margin-bottom:1px;">Great!</h1> 
+          </div>
+
+               <div class="modal-body">
+               
+  <div class="jumbotron" style="background-color:white; display:block">
+    <p class="text-left commitinfo" style="color:rgba(0,0,0,1); font-weight: normal; font-size:20px;"> Next, you will be shown 5 different commits on this repository, one at a time. The commit is shown similar to how it would appear on Github.</p>
+    <p class="text-left commitinfo" style="color:rgba(0,0,0,1); font-weight: normal; font-size:20px;"> Please rate each commit regarding the 5 survey questions posed below the commit (scroll down or use the 'Jump to Survey' button).</p>
+    <p class="text-left commitinfo" style="color:rgba(0,0,0,1); font-weight: normal; font-size:20px;"> After rating, you can move to next commit using the 'Forward' button at the bottom of the page.</p>
+
+    <div class="container text-center" style="margin-top:15px">
+    <a href = "#" class="btn btn-danger gotocommits"> &nbsp;&nbsp;&nbsp;Ok&nbsp;&nbsp;&nbsp;</a>
+    </div>
+    
+  </div>
+  </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

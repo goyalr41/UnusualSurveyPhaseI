@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unusual Commits Survey</title>
+    <meta name="author" content="Raman Goyal">
+     <link rel="icon" href="css/icon.png" type="image/x-icon">
+
+    <!-- Bootstrap modified -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css">
+
+	<!-- Github assets -->
+    <link rel="assets" href="https://assets-cdn.github.com/">
+      <link href="css/gitcss1.css" media="all" rel="stylesheet" />
+    <link href="css/gitcss2.css" media="all" rel="stylesheet" />
+    
+	<!-- My Javascript -->		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.heatcolor.0.0.1.js"></script>
+	<script type="text/javascript" src="js/store.min.js"></script>
+	<script type="text/javascript" src="js/gitresults.js"></script>
+	
+    <!-- My styles -->
+    <link href="css/jquery.switch.css" rel="stylesheet">
+   	<link href="css/styleresult.css" rel="stylesheet">
+   	<link rel="stylesheet" type="text/css" media="all" href="icons/octicons/octicons.css">
+
+	<!-- Google web font and font awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+	
+  </head>
+
+  <body>
+  
+  	<div class = "navbar navbar-fixed-top" id="top-wizard">
+			Our Rating
+	</div><!-- end top-wizard -->
+	
+	<div id = "mycommittop"></div>
+	    
+    <div class="wrapper">
+    
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+   
+    		<div class="pagehead repohead instapaper_ignore readability-menu">
+      
+      
+    </div><!-- /.repohead -->
+ 			<br>
+ 		
+ 			
+    
+   			 <div class="text-center myloader" style="display:none">   
+    	<img alt="" height="22" src="https://assets-cdn.github.com/assets/spinners/octocat-spinner-32-e513294efa576953719e4e2de888dd9cf929b7d62ed8d05f25e731d02452ab6c.gif" width="22" /> Loading Commit Data…
+	</div>
+	
+	<div class ="text-left myinstructions" style="margin-left:170px; margin-right:150px" >
+	<p style="margin-bottom:1px; font-size:16px;   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">Below you find the rating of our experimental algorithm for the 5 commits shown earlier on a scale from normal to very unusual. Our algorithm checks for different factors such as lines of code, number of files, type of files, time of commit etc. in a commit and rate the commit on that basis, if many of these factors stand-out the commit is given a high anamoly score and hence marked as unusual or very unusual . If you are interested, we would like to hear whether you agree with that rating by <strong>checking the corresponding checkboxes.</strong> If you don't remember the commit, you can check it again by clicking "commit-sha" or the "commit-title". Please don't forget to submit your rating at the end.<br><br></p>
+	</div>
+	<!--<div class = "text-center">
+<img src="css/scale.png" alt="Unusualness Scale" style="width:800px;height:30px"></div>-->
+			
+				<div class="nowshowcommitdata">
+
+    <div class="container">
+
+      <br>
+<!----------- commit data-->
+
+<div class="commits-listing-padded js-navigation-container js-active-navigation-container" data-navigation-scroll="page">
+
+
+<ol class="commit-group table-list table-list-bordered">
+
+</ol>
+
+<div class="submit step" id="complete">
+                    	<i class="icon-check"></i>
+						<h3>Rating complete! Thank you for your time. Please submit.</h3>
+						<button name="process" class="submitdata">Submit the rating</button>
+</div>
+			
+</div>
+
+        </div>
+    
+     </div> <!-- End now show commit data -->
+    
+  </div><!-- /.site -->
+  
+    </div><!-- /.wrapper -->
+   
+    
+    
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+  
+<!-- OTHER JS --> 
+<script src="js/jquery.validate.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+      <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-447ce66a36506ebddc8e84b4e32a77f6062f3d3482e77dd21a77a01f0643ad98.js"></script>
+
+
+  </body>
+</html>
+

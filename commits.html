@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unusual Commits Survey</title>
+    <meta name="author" content="Raman Goyal">
+    
+    <!-- Bootstrap modified -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css">
+
+	<!-- Github assets -->
+    <link rel="assets" href="https://assets-cdn.github.com/">
+     <link href="css/gitcss1.css" media="all" rel="stylesheet" />
+    <link href="css/gitcss2.css" media="all" rel="stylesheet" />
+    
+	<link rel="icon" href="css/icon.png" type="image/x-icon">
+
+	<!-- My Javascript -->		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/store.min.js"></script>
+	<script type="text/javascript" src="js/gitcommits.js"></script>
+	
+    <!-- My styles -->
+   	<link href="css/stylecommit.css" rel="stylesheet">
+   	<link rel="stylesheet" type="text/css" media="all" href="icons/octicons/octicons.css">
+
+	<!-- Google web font and font awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+
+	<!-- JQuery UI-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	
+	<!-- Wizard-->
+	<script src="js/jquery.wizard.js"></script>
+
+
+  </head>
+
+  <body>
+  
+  	<div class = "navbar navbar-fixed-top" id="top-wizard">
+		Progress <span id="location">(0/5)</span>
+					    			
+		<div id="progressbar"></div>
+</div>
+		<div class="shadow"></div>
+	</div><!-- end top-wizard -->
+	
+	<div id = "mycommittop"></div>
+	    
+    <div class="wrapper">
+    
+      <div id="start-of-content" class="accessibility-aid"></div>
+          <div class="site" itemscope itemtype="http://schema.org/WebPage">
+   
+    		<div class="pagehead repohead instapaper_ignore readability-menu">
+      
+      
+    </div><!-- /.repohead -->
+ 			<br>
+    
+   			 <div class="text-center myloader" style="display:none">   
+    	<img alt="" height="22" src="icons/spinner.gif" width="22" /> Loading Commit Data…
+	</div>
+	
+			
+				<div class="nowshowcommitdata">
+				<div class="movablebutton">
+	    			<a type="button" href="#survey_container" class="btn btn-danger pull-right skipsurvey" id="movablebtn" style="    z-index:99;">Jump to Survey</a>
+				</div>
+    <div class="container">
+
+      
+<!----------- commit data-->
+
+<div id="js-repo-pjax-container" class="repository-content context-loader-container" data-pjax-container>
+          
+	<div class="commit full-commit ">
+    <p class="commit-title">
+    </p>
+    
+    <div class="commit-desc"><pre class="mycommit-desc"></pre></div>
+
+
+  <div class="commit-branches">
+    
+    <span class="octicon octicon-git-branch"></span>
+  </div>
+
+  <div class="commit-meta clearfix">
+    <span class="sha-block mycommit"></span>
+
+    <span class="sha-block myparent" data-pjax>
+    </span>
+
+    <div class="authorship">
+      
+
+    </div>
+  </div>
+</div>
+
+	<a name="diff-stat"></a>
+      
+	<div id="toc" class="details-collapse table-of-contents js-details-container" style="display:none">
+  <div class="btn-group right" data-ga-load="Diff, view, Viewed Unified Diff">
+  <a class="btn btn-sm selected" href="#">
+    Unified
+  </a>
+  
+</div>
+
+
+  <div class="toc-diff-stats">
+    <span class="octicon octicon-diff"></span>
+    Showing
+    <button type="button" class="btn-link js-details-target myfileschanged">
+    </button>
+    with
+    <strong class="myadditions"></strong>
+    and <strong class="mydeletions"></strong>.
+  </div>
+
+  <ol class="content js-transitionable"> </ol>
+</div>
+
+	<div id="files" class="details-collapse diff-view js-details-container" style="display:none">
+     
+</div>
+  
+</div>
+
+
+        </div>
+    
+     </div> <!-- End now show commit data -->
+    
+  </div><!-- /.site -->
+  
+  	  <hr/>
+  
+  <div class="nowshowsurveydata">
+  		<section class="container" id="main">
+
+<div id="survey_container">
+    
+	<form name="example-1" id="wrapped" action="" method="POST">
+		<div id="top-wizardform">Survey Questions</div>
+		<div id="middle-wizard">
+		
+			<div class="step">	
+			<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class ="que1-a">1.&nbsp; You would <strong style="color:red"> not </strong> pay attention to this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-a" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-a" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-a" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que1-a" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-a" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que1-b">2.&nbsp; You would like to get notified about this this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-b" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-b" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-b" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que1-b" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-b" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que1-c">3.&nbsp; This commit seems to be unusual?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-c" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-c" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-c" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que1-c" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-c" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que1-d">4.&nbsp; This commit seems to be risky?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-d" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-d" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-d" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que1-d" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-d" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+					<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que1-e">5.&nbsp; I would care about this commit.</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-e" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-e" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-e" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que1-e" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que1-e" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+				<label>Additional comments about this commit (optional):</label>
+				   <textarea rows="3" class="form-control" id="que1comment" style="border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+				</ul>
+				</div><!-- end step -->
+					
+			<div class="step">	<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class ="que2-a">1.&nbsp; You would <strong style="color:red"> not </strong> pay attention to this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-a" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-a" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-a" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que2-a" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-a" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que2-b">2.&nbsp; You would like to get notified about this this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-b" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-b" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-b" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que2-b" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-b" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que2-c">3.&nbsp; This commit seems to be unusual?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-c" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-c" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-c" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que2-c" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-c" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que2-d">4.&nbsp; This commit seems to be risky?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-d" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-d" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-d" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que2-d" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-d" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que2-e">5.&nbsp; I would care about this commit.</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-e" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-e" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-e" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que2-e" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que2-e" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+				<label>Additional comments about this commit (optional):</label>
+				   <textarea rows="3" class="form-control" id="que2comment" style="border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+				</ul>
+			</div><!-- end step -->
+								
+			<div class="step">	<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class ="que3-a">1.&nbsp; You would <strong style="color:red"> not </strong> pay attention to this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-a" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-a" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-a" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que3-a" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-a" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que3-b">2.&nbsp; You would like to get notified about this this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-b" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-b" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-b" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que3-b" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-b" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que3-c">3.&nbsp; This commit seems to be unusual?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-c" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-c" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-c" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que3-c" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-c" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que3-d">4.&nbsp; This commit seems to be risky?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-d" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-d" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-d" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que3-d" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-d" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que3-e">5.&nbsp; I would care about this commit.</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-e" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-e" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-e" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que3-e" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que3-e" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+				<label>Additional comments about this commit (optional):</label>
+				   <textarea rows="3" class="form-control" id="que3comment" style="border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+				</ul>
+			</div><!-- end step -->
+				
+			<div class="step">	<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class ="que4-a">1.&nbsp; You would <strong style="color:red"> not </strong> pay attention to this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-a" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-a" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-a" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que4-a" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-a" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que4-b">2.&nbsp; You would like to get notified about this this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-b" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-b" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-b" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que4-b" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-b" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que4-c">3.&nbsp; This commit seems to be unusual?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-c" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-c" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-c" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que4-c" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-c" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que4-d">4.&nbsp; This commit seems to be risky?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-d" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-d" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-d" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que4-d" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-d" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que4-e">5.&nbsp; I would care about this commit.</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-e" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-e" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-e" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que4-e" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que4-e" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+				<label>Additional comments about this commit (optional):</label>
+				   <textarea rows="3" class="form-control" id="que4comment" style="border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+				</ul>
+		</div><!-- end step -->
+			
+			<div class="step">	<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class ="que5-a">1.&nbsp; You would <strong style="color:red"> not </strong> pay attention to this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-a" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-a" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-a" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que5-a" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-a" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que5-b">2.&nbsp; You would like to get notified about this this commit?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-b" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-b" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-b" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que5-b" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-b" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que5-c">3.&nbsp; This commit seems to be unusual?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-c" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-c" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-c" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que5-c" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-c" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que5-d">4.&nbsp; This commit seems to be risky?</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-d" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-d" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-d" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que5-d" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-d" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+					<div class = "row">
+					<div class="col-md-12">
+						<h3 class="que5-e">5.&nbsp; I would care about this commit.</h3>
+					</div>
+						
+					<div class ="col-md-2 mypadding">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-e" type="radio"  value="Strongly Disagree">Strongly Disagree
+						</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-e" type="radio"  value="Disagree">Disagree
+						</label>
+					</div>	
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-e" type="radio"  value="Neutral">Neutral
+							</label>
+					</div>
+					<div class ="col-md-2">
+				    	<label class="radio-inline" style="font-size:15px">
+				    		<input name="que5-e" type="radio"  value="Agree">Agree
+				    	</label>
+					</div>
+					<div class ="col-md-2">
+						<label class="radio-inline" style="font-size:15px">
+							<input name="que5-e" type="radio"  value="Strongly Agree">Strongly Agree
+						</label>
+					</div>
+				</div><!-- end row -->
+				</ul>
+				<ul>
+				<label>Additional comments about this commit (optional):</label>
+				   <textarea rows="3" class="form-control" id="que5comment" style="border-color:rgba(0,0,0,0.8); color:black;"></textarea>
+				</ul>
+			</div><!-- end step -->
+					
+            
+		
+            
+			<div class="submit step" id="complete">
+                    	<i class="icon-check"></i>
+						<h3>Thank you for your feedback.<br><br>If you are interested in how our experimental mechanism rated the same commits, follow the link below.</h3>
+						<a href="results.html" name="process" class="btn btn-success submit">Go to our rating</a>
+						<!--<button type="submit" name="process" class="submit">Submit &amp; check decision</button>-->
+			</div><!-- end submit step -->
+            
+		</div><!-- end middle-wizard -->
+        
+		<div id="bottom-wizard">
+			<!--<button type="button" name="backward" class="backward"><i class="fa fa-angle-left"></i>&nbsp; Backward</button>-->
+			<button type="button" name="forward" class="forward">Forward &nbsp;<i class="fa fa-angle-right"></i></button>
+		</div><!-- end bottom-wizard -->
+	</form>
+    
+</div><!-- end Survey container -->
+
+</section>
+ </div> <!-- End now show survey data -->
+
+    </div><!-- /.wrapper -->
+   
+    
+    
+    <div class="fullscreen-overlay js-fullscreen-overlay" id="fullscreen_overlay">
+  <div class="fullscreen-container js-suggester-container">
+    <div class="textarea-wrap">
+      <textarea name="fullscreen-contents" id="fullscreen-contents" class="fullscreen-contents js-fullscreen-contents" placeholder=""></textarea>
+      <div class="suggester-container">
+        <div class="suggester fullscreen-suggester js-suggester js-navigation-container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fullscreen-sidebar">
+    <a href="#" class="exit-fullscreen js-exit-fullscreen tooltipped tooltipped-w" aria-label="Exit Zen Mode">
+      <span class="mega-octicon octicon-screen-normal"></span>
+    </a>
+    <a href="#" class="theme-switcher js-theme-switcher tooltipped tooltipped-w"
+      aria-label="Switch themes">
+      <span class="octicon octicon-color-mode"></span>
+    </a>
+  </div>
+</div>
+  
+<!-- OTHER JS --> 
+<script src="js/jquery.validate.js"></script>
+<script src="js/jquery.placeholder.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+  </body>
+</html>
+

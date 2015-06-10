@@ -1,0 +1,281 @@
+@import url('http://fonts.googleapis.com/css?family=Oldenburg');
+
+  
+body {
+  background-size:cover;
+  background-repeat:no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+
+h1 { 
+  font-family: 'Oldenburg', Arial, sans-serif;
+  color: rgba(255,255,255,0.7);
+  font-size: 30px;
+  line-height: 1.6em;
+  margin-bottom: 5px;
+  margin-top:1px;
+}
+
+.jumbotron {
+  padding: 15px 10px;
+  margin-bottom: 5px;
+  color: inherit;
+  background-color: #eee;
+}
+.jumbotron p {
+color:rgba(255,255,255,0.7);
+  margin-bottom: 15px;
+  font-size: 21px;
+  font-weight: 200;
+}
+
+.jumbotron h1 {
+color:rgba(255,255,255,0.9);
+  font-size: 50px;
+
+}
+
+h4 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.8em;
+  line-height: 1.55em;
+  margin-bottom: 4px;
+color: rgba(255,255,255,0.9);
+}
+
+/*p{
+ font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.55em;
+  margin-bottom: 12px;
+    color: #9D9D9D;
+}*/
+
+.question {
+	font-size: 18px;
+	color: black;
+}
+
+.myoption{
+	font-size: 14px;
+	color: black;
+
+}
+
+p.follower {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.55em;
+  margin-bottom: 12px;
+    color: rgba(0,0,0);
+}
+
+p.lead {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 20px;
+  	font-weight: 300;
+  	line-height: 1.4;
+    /*color: #9D9D9D*/;
+    color: rgba(0,0,0);
+	margin-bottom: 1px;
+}
+
+hr {
+	background-color:black;
+}
+
+.btn-danger{
+	background-color:black;
+	border-color:black;
+}
+.popover-title{
+    background: black;
+color: white;
+}
+
+.reponame {
+	background-color: #c9302c;
+  border-color: #ac2925;
+}
+
+.reponame:hover,
+.reponame:focus,
+.reponame.focus,
+.reponame:active,
+.reponame.active {
+  color: #fff;
+  background-color: black;
+  border-color: black;
+}
+/* page structure */
+#w {
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 15px 25px;
+  -webkit-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  box-shadow: 1px 2px 3px -1px rgba(0,0,0,0.4);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#ghusername {
+	color:black;
+	border-color:black;
+	border-width:1px;
+}
+
+#searchrepo{
+	color:black;
+	border-color:black;
+	border-width:1px;
+}
+
+#addrepo{
+	color:black;
+	border-color:black;
+	border-width:1px;
+}
+
+#ghapidata {
+  display: block;
+  padding: 25px 0;
+}
+
+/* page content styles */
+.smallname {
+  font-size: 0.75em;
+  color: #a9a9a9;
+}
+
+.avi {
+  float: left;
+  margin-right: 7px;
+  margin-bottom: 7px;
+}
+.avi img {
+  
+  padding: 3px;
+}
+
+.repolist {
+  display: block;
+  clear: both;
+  width: 100%;
+}
+
+.repolist ul {
+  font-size: 40px;
+}
+.repolist ul li {
+  display: block;
+}
+.repolist ul li .amt {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+  padding: 6px 9px;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.custbtn {
+	  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+.modal-header{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+	text-align:center;
+	background-color:	#337ab7;
+	border-bottom:1px solid #e7e7e7;
+	position:relative;
+	font-size:13px;
+	color:rgba(255,255,255,1);
+}
+
+.modal-header p{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+	text-align:center;
+	font-weight:300;
+}
+
+.close {
+	opacity:0.5;
+}
+
+.close:hover {
+	opacity:0.9;
+}
+
+.progress {
+	margin-bottom:0px;
+}
+.surveycontainer p {
+	text-transform:none;
+	font-size:18px;
+	line-height:100%;
+	font-weight:600;
+	margin-bottom:10px;
+	text-align:left;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.surveycontainer p.presurvinfo{
+	font-weight:500;
+	font-size:16px;
+	margin-bottom:10px;
+}
+
+.commitinfo{
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+	font-weight:100;
+	color:white; 
+	font-size: 10px;
+}
+
+.myrow > * {
+    float: none;
+    display: inline-block;
+}
+
+.myrow > *:last-child {
+    vertical-align: bottom;
+}
+
+.myrow > *:nth-last-child(2) {
+    vertical-align: bottom;
+}
+
+.myrow p:last-child {
+    margin-bottom: 0; /* optional */
+}
+
+/*.repolist ul li a:hover {
+  background-color: #396895;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4b87c2), to(#396895));
+  background-image: -webkit-linear-gradient(top, #4b87c2, #396895);
+  background-image: -moz-linear-gradient(top, #4b87c2, #396895);
+  background-image: -ms-linear-gradient(top, #4b87c2, #396895);
+  background-image: -o-linear-gradient(top, #4b87c2, #396895);
+  background-image: linear-gradient(top, #4b87c2, #396895);
+}
+.repolist ul li a:active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.25);
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.25);
+}*/
+
+/* clearfix */
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+ 
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }

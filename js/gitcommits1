@@ -1,0 +1,139 @@
+
+	var data = [];
+	data.username = "ckaestne";
+	data.reponame = "TypeChef";
+	data.commitids = ["641894fc3de83e13e628143777663882cbb05cc1","9ea2bf83b7ab6ea5d0502899504771ed557556f4","cabd1e15b190191235101741f0489a21e0bfd6ef","7e2eee2b884c1961816a8ddad181f9d23894c832","160f3fa4117ccd48a38a8863464d80849fa0fff0","bc789c8dbd078ebdafc385e658ec7ded962a13f9","db9cd469f4aec879a9174637af9ad7a701528ae4","29e62c2269b43619e11452ab5e3a11e68f44f487","27da01e1ce133fa7d17ccac0599eff724ae19ab3","9cad59701eda3da987c922fd342860001e65c033"];
+
+	var username = data.username;
+	var reponame = data.reponame;
+	var commitids = data.commitids;
+	
+
+	function showcommitdata(commitindex){
+		var requri = 'https://api.github.com/repos/';
+		requri = requri + username + "/" + reponame + "/commits/" + commitids[commitindex];
+		console.log(requri);
+		//ckaestne/TypeChef/commits/aff7962f8c8a2ba0a02113a7337096c9b088a141';
+    	requestJSON(requri, function(json) {
+      		if(json.message == "Not Found") {
+        	//$('#ghapidata').html("<h2>No User Info Found</h2>");
+      		}
+      		else {
+      		var stats = json.stats;
+      		var files   = json.files;
+      		var commit = json.commit;
+      		var parents = json.parents;
+      		var author = json.author;
+      		if(author == null) {
+      			author = json.commit.author;
+      			author.login = json.commit.author.name;
+      		}
+      
+      		//var author_name = "shyam";
+      		//var repo_name = "tina";
+      		//$(".author").html('<a href="https://github.com/' + author_name + '" class="url fn" itemprop="url" rel="author"><span itemprop="title">' + author_name +'</span></a>');
+      		//$(".myreponame").html('<a href="https://github.com/' + author_name + '/' + repo_name +'" class="js-current-repository" data-pjax="#js-repo-pjax-container">' + repo_name +'</a>');
+      	
+      		$(".myfileschanged").html(files.length + ' changed files');
+			$(".myadditions").html(stats.additions + ' additions');
+			$(".mydeletions").html(stats.deletions + ' deletions');
+			var fg = commit.message.split("\n");
+			if(fg.length > 1) {
+				$(".commit-title").html(commit.message.split("\n")[0]);
+				$(".mycommit-desc").html(commit.message.substring(commit.message.split("\n")[0].length+2,commit.message.length));
+			}else {
+				$(".commit-title").html(commit.message);
+			}
+			$(".mycommit").html('commit <span class="sha js-selectable-text">'+json.sha+'</span>');
+        	$(".myparent").html(parents.length + ' parent ');
+        
+        	$.each(parents, function(index) {
+        		$(".myparent").append('<a href="' + parents[index].html_url + '" class="sha" data-hotkey="p">' + parents[index].sha.substring(0,7) +'</a>');
+        	});
+        
+        	$(".authorship").html('<img alt="@' + author.login  + '" class="avatar" data-user="' + author.id +'" height="24" src="' + author.avatar_url + '&amp;s=48" width="24" /> <span class="author-name"><a href="' +author.html_url + '" rel="author">' + author.login + '</a></span> &nbsp;authored on <time datetime="'+commit.author.date +'" is="relative-time">'+commit.author.date.split("T")[0]+'</time>');
+        
+        	$.each(files, function(index) {
+        		var outhtml = '<li>';
+    			outhtml = outhtml + '<span class="diffstat right">';
+    			outhtml = outhtml + '<span class="text-diff-added">';
+    			outhtml = outhtml + '+' + files[index].additions +  '</span><span class="text-diff-deleted">';
+    			outhtml = outhtml + '&nbsp;−' + files[index].deletions +  '</span>&nbsp;';
+    			outhtml = outhtml + '<a href="#diff-' +  files[index].sha;
+    			outhtml = outhtml + '" class="tooltipped tooltipped-s" aria-label="' + files[index].changes + ' &nbsp;lines changed">';
+    			outhtml = outhtml + '<span class = "octicon octicon-info" style = "color:black;"></span></a></span>';
+    			outhtml = outhtml + '<span class="octicon octicon-diff-' + files[index].status + '" title="' + files[index].status + '"></span>';
+    			outhtml = outhtml + '<a href="#diff-' + files[index].sha + '">' + files[index].filename + '</a>';
+    			outhtml = outhtml + '</li>';
+    			$(".content.collapse.js-transitionable").append(outhtml);
+    		
+    		
+     			outhtml =  '<a name="diff-' + files[index].sha + '"></a>';
+     			outhtml =  outhtml + '<div id="diff-' + index + '" class="file js-details-container">';
+     			outhtml =  outhtml + '<div class="file-header" data-path="' + files[index].filename + '">';
+     			outhtml =  outhtml + '<div class="file-actions">'; 
+     			outhtml =  outhtml + '<a href="' + files[index].blob_url +'"class="btn btn-sm tooltipped tooltipped-n" rel="nofollow" aria-label="View the whole file at this commit">View</a>&nbsp;';
+     			outhtml =  outhtml + '<button class="btn btn-sm tooltipped tooltipped-n btnexpansion" rel="nofollow" aria-label="Collapse" id="' +files[index].sha +'"><i class="fa fa-angle-up" style="color:black; font-weight:bold;"></i></button>';
+     			outhtml =  outhtml + '</div><div class="file-info">';
+     			outhtml =  outhtml + '<span class="diffstat tooltipped tooltipped-e" aria-label="' + files[index].additions + ' additions &amp;' + files[index].deletions + ' deletions">' + files[index].changes + '&nbsp;<span class="diffstat-bar"></span></span>';
+     			outhtml =  outhtml + '<span class="js-selectable-text" title="' + files[index].filename +'">' + files[index].filename + '</span></div></div>';
+     			outhtml =  outhtml + '<div class="data highlight blob-wrapper"><table class="diff-table  tab-size-8" id ="tab' + files[index].sha + '">';
+     
+    			var ks = files[index].patch.split("\n");
+     			$.each(ks, function(k){
+            		if(ks[k].substring(0,2) === '@@') {
+              			outhtml = outhtml + '<tr><td class="blob-code blob-code-inner blob-code-hunk">' + ks[k] + '</td></tr>';
+              		}else if(ks[k].substring(0,1) === '+'){
+            	  		outhtml = outhtml + '<tr><td class="blob-code blob-code-addition"><span class="blob-code-inner">'+ ks[k] +'</span></td></tr>';
+              		}else if(ks[k].substring(0,1) === '-'){
+              			outhtml = outhtml + '<tr><td class="blob-code blob-code-deletion"><span class="blob-code-inner">'+ ks[k] +'</span></td></tr>';
+              		}else {
+              			outhtml = outhtml + '<tr><td class="blob-code blob-code-content"><span class="blob-code-inner">'+ ks[k] +'</span></td></tr>';
+              		}
+     			});   
+     			outhtml = outhtml + '</table></div></div>';
+    			$(".diff-view").append(outhtml);
+
+			});
+		
+		$(".details-collapse ol").hide();
+		$(".details-collapse.table-of-contents.js-details-container").css("display","block");
+		$(".diff-view").css("display","block");
+		$('.btnexpansion').on('click', function(){
+			var id = '#tab' + $(this).attr("id");
+			if($(id).hasClass("collapse")) {
+				$(this).attr("aria-label","Collapse");
+				$(this).html('<i class="fa fa-angle-up" style="color:black; font-weight:bold;">');
+				$(id).removeClass("collapse");
+			}else {
+				//var id = '#tab' + $(this).attr("id");
+				$(this).attr("aria-label","Expand");
+				$(this).html('<i class="fa fa-angle-down" style="color:black; font-weight:bold;">');
+				$(id).addClass("collapse");
+			}	
+		});
+		
+		$('.myfileschanged').on('click', function(){
+			var id = '.myjscollapse';
+			if($(".details-collapse ol").hasClass(id)) {
+				$(".details-collapse ol").hide();
+				$(".details-collapse ol").removeClass(id);
+			}else {
+				$(".details-collapse ol").show();
+				$(".details-collapse ol").addClass(id);
+
+			}	
+		});
+		
+    	 }
+     });
+     }
+	
+	function requestJSON(url, callback) {
+    $.ajax({
+      url: url,
+      complete: function(xhr) {
+        callback.call(null, xhr.responseJSON);
+      }
+    });
+  }
